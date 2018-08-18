@@ -1,7 +1,7 @@
 <?php
 
 const TEST_CONSTANTA = 'asd';
-$userName = "Igor";
+$username = "Igor";
 
 include "file.php";
 
