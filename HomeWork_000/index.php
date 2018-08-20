@@ -1,6 +1,6 @@
 <?php
 
-const TEST_CONSTANTA = 'asd';
+const TEST_CONSTANTA = "asd";
 $username = "Igor";
 
 include "file.php";
