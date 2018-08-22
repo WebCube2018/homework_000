@@ -71,13 +71,15 @@ $opel = array(
 );
 
 $cars = array_merge_recursive($bmw, $toyota, $opel);
-//C этим заданием не мало првозился думал как провести в цикл разные варианты опробывал с for и while и foreach
-echo "CAR bmw".$b;
-echo $cars["model"][0]." ".$cars["speed"][0]." ".$cars["doors"][0]." ".$cars["year"][0].$b;
-echo "CAR toyota".$b;
-echo $cars["model"][1]." ".$cars["speed"][1]." ".$cars["doors"][1]." ".$cars["year"][1].$b;
-echo "CAR opel".$b;
-echo $cars["model"][2]." ".$cars["speed"][2]." ".$cars["doors"][2]." ".$cars["year"][2].$b;
+$car["bmv"] = $bmw;
+$car["toyota"] = $toyota;
+$car["opel"] = $opel;
+
+foreach ($car as $key => $item) {
+    echo "CAR $key".$b;
+    echo $item["model"]." ".$item["speed"]." ".$item["doors"]." ".$item["year"].$b;
+}
+
 
 //task 6
 echo "<h3>Задание № 6</h3>".$b;
