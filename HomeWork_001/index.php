@@ -70,7 +70,6 @@ $opel = array(
     "year" => 2014,
 );
 
-$cars = array_merge_recursive($bmw, $toyota, $opel);
 $car["bmv"] = $bmw;
 $car["toyota"] = $toyota;
 $car["opel"] = $opel;
