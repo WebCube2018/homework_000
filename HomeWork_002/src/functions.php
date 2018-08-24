@@ -1,14 +1,20 @@
 <?php
 
+
 //Task 1
-function task1($value1, $value2)
+function task1($value1, $value2 = false)
 {
     if ($value2 == true) {
+        if (is_array($value1)) {
+            $result = implode(", ", $value1);
+            return $result;
+        } else {
+            return false;
+        }
+    } else {
         foreach ($value1 as $result) {
             echo "<p>" . $result . "</p>";
         }
-    } else {
-        return false;
     }
 }
 
