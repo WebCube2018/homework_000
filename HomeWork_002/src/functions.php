@@ -23,32 +23,40 @@ function task1($value1, $value2 = false)
 function task2()
 {
     $argList = func_get_args();
-    $total = count($argList);
-    $counter = 0;
-    if ($argList[0] == "+") {
-        $arg = true;
-    } else {
-        $arg = false;
-    }
-
-    foreach ($argList as $k => $v) {
-        $counter++;
-        if ($arg) {
-            if ($k > 0) {
-                $result = $v;
-                $result .= $counter != $total ? $argList[0] : "";
-                echo $result;
+    $arithmetic = array_shift($argList);
+    $sum = 0;
+    switch ($arithmetic) {
+        case "+":
+            foreach ($argList as $value) {
+                $sum += intval($value);
             }
-        } else {
-            echo "Error: ";
             break;
-        }
+
+        case "-":
+            foreach ($argList as $value) {
+                $sum -= intval($value);
+            }
+            break;
+        case "*":
+            $sum = 1;
+            foreach ($argList as $value) {
+                $sum *= intval($value);
+            }
+            break;
+        case "/":
+            $sum = 1;
+            foreach ($argList as $value) {
+                $sum /= intval($value);
+            }
+            break;
+        default:
+            echo "Неизвестный символ передайте первым пареметров в функцию +, *, -, / ";
     }
-    if ($arg) {
-        echo " = ";
-        echo array_sum($argList);
+    $result = implode(" $arithmetic ", $argList);
+    if ($arithmetic == "+" || $arithmetic == "-" || $arithmetic == "*" || $arithmetic == "/") {
+        echo $result." = ".$sum;
     } else {
-        echo "Первый аргумент переданной функции не определен поставте плюс";
+        echo "error";
     }
 }
 
