@@ -17,20 +17,30 @@ function task1()
         $i++;
         if (($i % 2) == 0) {
             $content .= "<hr>";
-            $bool = true;
         }
         $content .= "Type = ".$value->attributes()->Type->__toString();
         foreach ($value as $key => $value) {
             $content .= $key." - ".$value[0]."<br>";
         }
-        foreach ($xml->Items->Item as $k => $value) {
-            $content .= "PartNumber = ".$xml->Items->Item->attributes()->PartNumber->__toString();
+    }
+    $content2 ="";
+    foreach ($xml->Items->Item as $value) {
+        $i++;
+        if (($i % 2) == 0) {
+            $content2 .= "<hr>";
+        }
+        $content2 .= "PartNumber = ".$value->attributes()->PartNumber->__toString()."<br>";
+        foreach ($value as $key => $value) {
+            $content2 .= $key." - ".$value[0]."<br>";
         }
     }
+
 
     $content .= "<br><b><i>DeliveryNotes: </i></b>".$xml->DeliveryNotes->__toString();
     echo "<html><head></head><body>";
     echo $content;
+    echo "<h3>Items:</h3>";
+    echo $content2;
     echo "</body></html>";
 }
 
@@ -116,7 +126,7 @@ function task4()
     $decoded = json_decode($fileArray, true);
 
     search_key("title", $decoded, $result);
-    echo "title: ".$result[0].PHP_EOL;
+    echo "title: ".$result[0]."<br>";
     search_key("page_id", $decoded, $result);
     echo "page_id: ".$result[0];
 
