@@ -1,0 +1,1 @@
+url админка - admin/index.php
