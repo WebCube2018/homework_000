@@ -370,17 +370,17 @@
                   <div class="order__form-row order__form-row_double">
                     <label class="order__form-block">
                       <div class="order__form-label">Имя</div>
-                      <input class="order__form-input" id="name" type="text" placeholder="">
+                      <input class="order__form-input" id="name" type="text" placeholder="" required>
                     </label>
                     <label class="order__form-block">
                       <div class="order__form-label">Телефон</div>
-                      <input class="order__form-input phone-mask" id="phone" type="text" placeholder="">
+                      <input class="order__form-input phone-mask" id="phone" type="text" placeholder="" required>
                     </label>
                   </div>
                   <div class="order__form-row order__form-row_double">
                     <label class="order__form-block">
                       <div class="order__form-label">email</div>
-                      <input class="order__form-input" id="email" type="email" placeholder="">
+                      <input class="order__form-input" id="email" type="email" placeholder="" required>
                     </label>
                     <label class="order__form-block">
                       <div class="order__form-label">Улица</div>
@@ -416,19 +416,19 @@
                   <div class="order__form-buttons">
                     <div class="order__form-row">
                       <label class="order__radio">
-                        <input class="order__radio-elem" id="payment" type="radio">
+                        <input class="order__radio-elem" id="payment" name="pay" type="radio" value="sdacha">
                         <div class="order__radio-fake"></div>
                         <div class="order__radio-title">Потребуется сдача</div>
                       </label>
                       <label class="order__radio">
-                        <input class="order__radio-elem" id="payment_card" type="radio">
+                        <input class="order__radio-elem" id="payment_card" name="pay" type="radio" value="card">
                         <div class="order__radio-fake"></div>
                         <div class="order__radio-title">Оплата по карте</div>
                       </label>
                     </div>
                     <div class="order__form-row">
                       <label class="order__radio order__radio_checkbox">
-                        <input class="order__radio-elem" id="callback" type="checkbox">
+                        <input class="order__radio-elem" id="callback" type="checkbox" value="off">
                         <div class="order__radio-fake"></div>
                         <div class="order__radio-title">Не перезванивать</div>
                       </label>

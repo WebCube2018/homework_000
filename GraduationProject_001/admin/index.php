@@ -1,7 +1,7 @@
 <?php
 
 require_once '../login.php';
-$connection = new mysqli($db_hostname, $db_username, $db_password, $db_database);
+$connection = new mysqli($hostName, $userName, $password, $dataBase);
 require_once '../function.php';
 
 ?>

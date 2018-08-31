@@ -1,21 +1,40 @@
 <?php
 
+//Функция записи ошибок
+function errorBd($content, $file)
+{
+    $file = "./error/error-".$file."-".date("d.m.y-h:m").".txt";
+    $current = file_get_contents($file)."\n";
+    $current .= $content;
+    file_put_contents($file, $current);
+}
+
+
 //Функция добавления заказа
 function addOrder($connection, $street, $home, $part, $appt, $comment, $numOrder, $userId, $floor)
 {
     /* подготавливаемый запрос, первая стадия: подготовка */
     if (!($stmt = $connection->prepare("INSERT INTO orders (street, house, housing, apartment, commentar, number_order, user_id, floor) VALUES (?,?,?,?,?,?,?,?)"))) {
-        echo "Не удалось подготовить запрос: (" . $connection->errno . ") " . $connection->error;
+        $content = "Не удалось подготовить запрос: (" . $connection->errno . ") " . $connection->error;
+        $file = "INSERT";
+        errorBd($content, $file);//пишем ошибки в файл
+        echo "Что то пошло не так! <br> Обатитесь к администратору";
         $stmt = false;
     }
     /* подготавливаемый запрос, вторая стадия: привязка и выполнение */
     if (!$stmt->bind_param("ssssssss", $street, $home, $part, $appt, $comment, $numOrder, $userId, $floor)) {
-        echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
+        $content =  "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
+        $file = "INSERT";
+        errorBd($content, $file);//пишем ошибки в файл
+        echo "Что то пошло не так! <br> Обатитесь к администратору";
         $stmt = false;
     }
 
     if (!$stmt->execute()) {
-        echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
+        $content =  "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
+        $file = "INSERT";
+        errorBd($content, $file);//пишем ошибки в файл
+        echo "Что то пошло не так! <br> Обатитесь к администратору";
         $stmt = false;
     }
 
@@ -46,15 +65,24 @@ function addUsers($connection, $name, $phone, $email)
 {
     /* подготавливаемый запрос, первая стадия: подготовка */
     if (!($stmt = $connection->prepare("INSERT INTO users (name, phone, email) VALUES (?, ?, ?)"))) {
-        echo "Не удалось подготовить запрос: (" . $connection->errno . ") " . $connection->error;
+        $content =  "Не удалось подготовить запрос: (" . $connection->errno . ") " . $connection->error;
+        $file = "INSERT";
+        errorBd($content, $file);//пишем ошибки в файл
+        echo "Что то пошло не так! <br> Обатитесь к администратору";
     }
     /* подготавливаемый запрос, вторая стадия: привязка и выполнение */
     if (!$stmt->bind_param("sss", $name, $phone, $email)) {
-        echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
+        $content = "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
+        $file = "INSERT";
+        errorBd($content, $file);//пишем ошибки в файл
+        echo "Что то пошло не так! <br> Обатитесь к администратору";
     }
 
     if (!$stmt->execute()) {
-        echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
+        $content =  "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
+        $file = "INSERT";
+        errorBd($content, $file);//пишем ошибки в файл
+        echo "Что то пошло не так! <br> Обатитесь к администратору";
     }
     return;
 }

@@ -1,7 +1,7 @@
 <?php
 require_once 'login.php';
 
-$connection = new mysqli($db_hostname, $db_username, $db_password, $db_database);
+$connection = new mysqli($hostName, $userName, $password, $dataBase);
 
 //Пищем полученные данные в переменные
 $name = $_REQUEST["name"];
@@ -15,7 +15,6 @@ $appt = $_REQUEST["appt"];
 $floor = $_REQUEST["floor"];
 $comment = $_REQUEST["comment"];
 $payment = $_REQUEST["payment"];
-$payment_card = $_REQUEST["payment_card"];
 $callback = $_REQUEST["callback"];
 $numOrder = date("d.m.y-h:m")."-".rand(1000, 10000);
 
