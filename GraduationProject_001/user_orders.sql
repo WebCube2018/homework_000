@@ -1,0 +1,8 @@
+INSERT INTO user.orders (id, user_id, street, house, housing, apartment, commentar, number_order, floor) VALUES (1, 1, 'Родионовская', '12', '1', '', 'У меня жилой дом', '01.09.18-10:09-4914', '');
+INSERT INTO user.orders (id, user_id, street, house, housing, apartment, commentar, number_order, floor) VALUES (2, 1, 'Первомайская', '77', '', '1', 'Желательно легкой прожарки мясо', '01.09.18-10:09-6888', '');
+INSERT INTO user.orders (id, user_id, street, house, housing, apartment, commentar, number_order, floor) VALUES (3, 2, 'Красная', '71', '2', '15', 'Побольше бургер, ', '01.09.18-10:09-1584', '2');
+INSERT INTO user.orders (id, user_id, street, house, housing, apartment, commentar, number_order, floor) VALUES (4, 2, 'Красная', '71', '2', '15', 'Хочу еще куплю 3 штуки', '01.09.18-10:09-8830', '2');
+INSERT INTO user.orders (id, user_id, street, house, housing, apartment, commentar, number_order, floor) VALUES (5, 3, 'Полярная', '22', '1', '', 'Привезите мне бургер на дачу, оплачу такси!', '01.09.18-10:09-5494', '');
+INSERT INTO user.orders (id, user_id, street, house, housing, apartment, commentar, number_order, floor) VALUES (6, 4, 'Полярная', '11', '2', '', 'СРОЧНО 12 бургеров за срочность доплачу', '01.09.18-10:09-2783', '');
+INSERT INTO user.orders (id, user_id, street, house, housing, apartment, commentar, number_order, floor) VALUES (7, 4, 'Полярная', '11', '2', '', 'Не хватило еще 31 бургер, понравились', '01.09.18-10:09-5545', '');
+INSERT INTO user.orders (id, user_id, street, house, housing, apartment, commentar, number_order, floor) VALUES (8, 5, 'Южная', '21', '2', '54', 'Подъезд 2', '01.09.18-10:09-7066', '5');
