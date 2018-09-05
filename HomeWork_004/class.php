@@ -20,7 +20,6 @@ abstract class BasicRate
 
     public function calculation($valueKm, $valueCh, $age, $tariff)
     {
-
         //Округление по часовому тарифу
         if ($tariff == self::NAME_HOUR_TARIFF && $valueCh < self::HOURS_VALUE) {
             $valueCh = 60;//Округлем до 60 минут если отездил меньше 60 минут
@@ -88,11 +87,9 @@ trait ServicesGps
     public function calculation($valueKm, $valueCh, $age, $tariff)
     {
         $itog =  parent::calculation($valueKm, $valueCh, $age, $tariff);
-        
         //переводим часы в минуты
         $valueCh = $valueCh / 60;
         $valueCh = round($valueCh, 0, PHP_ROUND_HALF_UP);
-
         return $valueCh * self::PRICE_GPS + $itog;
     }
 }
