@@ -1,8 +1,11 @@
 <?php
-$numberOfSeconds = 1439;
-$arrayHours = gmdate('d:H:i', $numberOfSeconds * 60);
-$arrayHours = explode(":", $arrayHours);
-//if ($arrayHours[3] >)
-echo '<pre>';
-print_r($arrayHours);
-echo '</pre>';
+require_once "class.php";
+
+
+//Вывод инфы
+try {
+    $tar = new TariffBsic();
+    echo $tar->calculation(5, 1471, 23, get_class($tar));
+} catch (Exception $error) {
+    print "Ошибка!!!: ".$error->getMessage();
+}

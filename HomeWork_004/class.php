@@ -1,15 +1,10 @@
 <?php
-
-$tariffBasic = "Basic";
-$tariffHour = "Hour";
-$tariffDay = "Day";
-$tariffStudent = "TariffStudent";
-
 abstract class BasicRate
 {
     const MIN_AGE = 18;
     const MAX_AGE = 65;
     const PRICE_GPS = 15;
+    const PRICE_DRIVE = 100;
     const BONUS_FOR_YOUNG = 0.1;
     const NAME_STUDENT_TARIFF = "TariffStudent";
     const NAME_HOUR_TARIFF = "TariffHour";
@@ -69,21 +64,22 @@ class TariffBsic extends BasicRate
 {
     protected $kmRate = 10;
     protected $hcRate = 3;
-
-    use ServicesGps;
 }
 class TariffHour extends BasicRate
 {
+    //    use ServicesGps; передаем доп услуги
     protected $kmRate = 0;
     protected $hcRate = 200;
 }
 class TariffDay extends BasicRate
 {
+    //    use ServicesGps; передаем доп услуги
     protected $kmRate = 1;
     protected $hcRate = 1000;
 }
 class TariffStudent extends BasicRate
 {
+//    use ServicesGps; передаем доп услуги
     protected $kmRate = 4;
     protected $hcRate = 1;
 }
@@ -100,23 +96,11 @@ trait ServicesGps
         return $valueCh * self::PRICE_GPS + $itog;
     }
 }
-
 trait ServicesDriver
 {
     public function calculation($valueKm, $valueCh, $age, $tariff)
     {
         $itog =  parent::calculation($valueKm, $valueCh, $age, $tariff);
-
-        return $valueCh * self::PRICE_GPS + $itog;
+        return self::PRICE_DRIVE + $itog;
     }
-}
-
-
-
-//Вывод инфы
-try {
-    $tar = new TariffBsic();
-    echo $tar->calculation(5, 1471, 18, get_class($tar));
-} catch (Exception $error) {
-    print "Ошибка!!!: ".$error->getMessage();
 }
