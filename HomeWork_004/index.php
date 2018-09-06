@@ -21,7 +21,7 @@ use Webcube\Hopscotch\TariffDay;
 
 //Вывод инфы
 try {
-    $tar = new TariffBasic();//Пишем тариф
+    $tar = new TariffStudent();//Пишем тариф
     echo $tar->calculation(5, 1471, 23, get_class($tar));
 } catch (Exception $error) {
     print "Ошибка!!!: ".$error->getMessage();
