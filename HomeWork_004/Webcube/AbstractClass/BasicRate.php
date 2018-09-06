@@ -1,4 +1,6 @@
 <?php
+namespace Webcube\AbstractClass;
+
 abstract class BasicRate
 {
     const MIN_AGE = 18;
@@ -57,47 +59,5 @@ abstract class BasicRate
         }
         //Тариф по умолчанию
         return $valueKm * $this->kmRate + $valueCh * $this->hcRate;
-    }
-}
-class TariffBsic extends BasicRate
-{
-    protected $kmRate = 10;
-    protected $hcRate = 3;
-}
-class TariffHour extends BasicRate
-{
-    //    use ServicesGps; передаем доп услуги
-    protected $kmRate = 0;
-    protected $hcRate = 200;
-}
-class TariffDay extends BasicRate
-{
-    //    use ServicesGps; передаем доп услуги
-    protected $kmRate = 1;
-    protected $hcRate = 1000;
-}
-class TariffStudent extends BasicRate
-{
-//    use ServicesGps; передаем доп услуги
-    protected $kmRate = 4;
-    protected $hcRate = 1;
-}
-trait ServicesGps
-{
-    public function calculation($valueKm, $valueCh, $age, $tariff)
-    {
-        $itog =  parent::calculation($valueKm, $valueCh, $age, $tariff);
-        //переводим часы в минуты
-        $valueCh = $valueCh / 60;
-        $valueCh = round($valueCh, 0, PHP_ROUND_HALF_UP);
-        return $valueCh * self::PRICE_GPS + $itog;
-    }
-}
-trait ServicesDriver
-{
-    public function calculation($valueKm, $valueCh, $age, $tariff)
-    {
-        $itog =  parent::calculation($valueKm, $valueCh, $age, $tariff);
-        return self::PRICE_DRIVE + $itog;
     }
 }

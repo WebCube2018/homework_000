@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Hello, world!</title>
+    <script src="http://code.jquery.com/jquery-3.3.1.js" ></script>
+</head>
+<body>
+    <div class="col-3"><img src="images/car_1.jpg" alt="" class="img-responsive"></div>
+    <div class="col-3"><img src="images/car_2.jpg" alt="" class="img-responsive"></div>
+    <div class="col-3"><img src="images/car_1.jpg" alt="" class="img-responsive"></div>
+    <div class="col-3"><img src="images/car_2.jpg" alt="" class="img-responsive"></div>
+    <div class="col-3"><img src="images/car_1.jpg" alt="" class="img-responsive"></div>
+    <div class="col-3"><img src="images/car_2.jpg" alt="" class="img-responsive"></div>
+    <div class="col-3"><img src="images/car_1.jpg" alt="" class="img-responsive"></div>
+    <div class="col-3"><img src="images/car_2.jpg" alt="" class="img-responsive"></div>
+    <div class="col-3"><img src="images/car_1.jpg" alt="" class="img-responsive"></div>
+    <div class="col-3"><img src="images/car_2.jpg" alt="" class="img-responsive"></div>
+    <div class="col-3"><img src="images/car_1.jpg" alt="" class="img-responsive"></div>
+    <div class="col-3"><img src="images/car_2.jpg" alt="" class="img-responsive"></div>
+    <div class="col-3"><img src="images/car_1.jpg" alt="" class="img-responsive"></div>
+    <div class="col-3"><img src="images/car_2.jpg" alt="" class="img-responsive"></div>
+    <div class="col-3"><img src="images/car_1.jpg" alt="" class="img-responsive"></div>
+    <div class="col-3"><img src="images/car_2.jpg" alt="" class="img-responsive"></div>
+    <div class="col-3"><img src="images/car_1.jpg" alt="" class="img-responsive"></div>
+    <div class="col-3"><img src="images/car_2.jpg" alt="" class="img-responsive"></div>
+    <div class="col-3"><img src="images/car_1.jpg" alt="" class="img-responsive"></div>
+    <div class="col-3"><img src="images/car_2.jpg" alt="" class="img-responsive"></div>
+    <div class="container"></div>
+    <div class="form">
+        <form class="order_form" id="order-form">
+            <div class="order">
+                <label class="order__form-block">
+                    <div class="order__form-label">Км</div>
+                    <input class="order__form-input" id="km" type="text" placeholder="" required>
+                </label>
+                <label class="order__form-block">
+                    <div class="order__form-label">Минут</div>
+                    <input class="order__form-input phone-mask" id="time" type="text" placeholder="" required>
+                </label>
+                <label class="order__form-block">
+                    <div class="order__form-label">Ваш возраст</div>
+                    <input class="order__form-input phone-mask" id="age" type="text" placeholder="" required>
+                </label>
+                <label class="order__form-block">
+                    <div class="order__form-label">Выбирете тариф</div>
+                    <div class="styled-select">
+                        <select class="select-test-1">
+                            <option value="TariffBasic">Тариф базовый</option>
+                            <option value="TariffHour">Тариф почасовой</option>
+                            <option value="TariffDay">Тариф суточный</option>
+                            <option value="TariffStudent">Тариф студенческий</option>
+                        </select>
+                    </div>
+                </label>
+                <label class="order__form-block">
+                    <div class="order__form-label">Доп услуги</div>
+                    <div class="styled-select">
+                        <select>
+                            <option value="ServicesGps">gps в салон</option>
+                            <option value="ServicesDriver">Дополнительный водитель</option>
+                        </select>
+                    </div>
+                </label>
+                <label class="order__form-block">
+                    <input id="submit" class="order__form-button" name="" type="button" value="Заказать">
+                </label>
+            </div>
+        </form>
+    </div>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/ajax.js" ></script>
+</body>
+</html>
